@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,10 +12,18 @@
 		8B0517A8255E468800D5F491 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B0517A6255E468800D5F491 /* Main.storyboard */; };
 		8B0517AA255E468A00D5F491 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B0517A9255E468A00D5F491 /* Assets.xcassets */; };
 		8B0517AD255E468A00D5F491 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B0517AB255E468A00D5F491 /* LaunchScreen.storyboard */; };
+		8B3C1EBB255E66F400184D1A /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1EBA255E66F400184D1A /* BaseVC.swift */; };
+		8B3C1EBF255E671400184D1A /* BaseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1EBE255E671400184D1A /* BaseConfigurator.swift */; };
+		8B3C1EC2255E681100184D1A /* Environments.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B3C1EC1255E681100184D1A /* Environments.plist */; };
+		8B3C1EC9255E699000184D1A /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1EC8255E699000184D1A /* HTTPMethod.swift */; };
+		8B3C1ECC255E69AB00184D1A /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1ECB255E69AB00184D1A /* EndPointType.swift */; };
+		8B3C1ECF255E69B900184D1A /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1ECE255E69B900184D1A /* HTTPTask.swift */; };
+		8B3C1ED2255E69CF00184D1A /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1ED1255E69CF00184D1A /* NetworkLogger.swift */; };
+		8B3C1ED5255E6CA200184D1A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1ED4255E6CA200184D1A /* NetworkManager.swift */; };
+		8B3C1EDA255E6E5C00184D1A /* NewsEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3C1ED9255E6E5C00184D1A /* NewsEndpoint.swift */; };
 		8B667C92255E4EEC00D433FF /* RNUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B667C91255E4EEC00D433FF /* RNUser.swift */; };
 		8B667C99255E524700D433FF /* RNNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B667C98255E524700D433FF /* RNNews.swift */; };
-		8B667C9D255E52E900D433FF /* RNMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B667C9C255E52E900D433FF /* RNMainVC.swift */; };
-		8B667CA5255E53C300D433FF /* RNBaseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B667CA4255E53C300D433FF /* RNBaseConfigurator.swift */; };
+		8B667C9D255E52E900D433FF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B667C9C255E52E900D433FF /* MainVC.swift */; };
 		8B667CA8255E61E300D433FF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B667CA7255E61E300D433FF /* Router.swift */; };
 		B2FB654E817CC3EF38222C9C /* Pods_Reign_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2293BC037F77E270AF19F2 /* Pods_Reign_News.framework */; };
 /* End PBXBuildFile section */
@@ -29,10 +37,18 @@
 		8B0517A9255E468A00D5F491 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B0517AC255E468A00D5F491 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B0517AE255E468A00D5F491 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B3C1EBA255E66F400184D1A /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		8B3C1EBE255E671400184D1A /* BaseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConfigurator.swift; sourceTree = "<group>"; };
+		8B3C1EC1255E681100184D1A /* Environments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Environments.plist; sourceTree = "<group>"; };
+		8B3C1EC8255E699000184D1A /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		8B3C1ECB255E69AB00184D1A /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		8B3C1ECE255E69B900184D1A /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		8B3C1ED1255E69CF00184D1A /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		8B3C1ED4255E6CA200184D1A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		8B3C1ED9255E6E5C00184D1A /* NewsEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEndpoint.swift; sourceTree = "<group>"; };
 		8B667C91255E4EEC00D433FF /* RNUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNUser.swift; sourceTree = "<group>"; };
 		8B667C98255E524700D433FF /* RNNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNNews.swift; sourceTree = "<group>"; };
-		8B667C9C255E52E900D433FF /* RNMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNMainVC.swift; sourceTree = "<group>"; };
-		8B667CA4255E53C300D433FF /* RNBaseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNBaseConfigurator.swift; sourceTree = "<group>"; };
+		8B667C9C255E52E900D433FF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		8B667CA7255E61E300D433FF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		AF2293BC037F77E270AF19F2 /* Pods_Reign_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reign_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88B77A9DC4D1AF32F7FE5B8 /* Pods-Reign News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reign News.release.xcconfig"; path = "Target Support Files/Pods-Reign News/Pods-Reign News.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,7 +72,6 @@
 				53AA27186E056DD7C628622E /* Pods-Reign News.debug.xcconfig */,
 				C88B77A9DC4D1AF32F7FE5B8 /* Pods-Reign News.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,6 +136,7 @@
 			children = (
 				8B0517AB255E468A00D5F491 /* LaunchScreen.storyboard */,
 				8B0517AE255E468A00D5F491 /* Info.plist */,
+				8B3C1EC1255E681100184D1A /* Environments.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -131,15 +147,37 @@
 				8B0517A2255E468800D5F491 /* SceneDelegate.swift */,
 				8B0517A0255E468800D5F491 /* AppDelegate.swift */,
 				8B0517A6255E468800D5F491 /* Main.storyboard */,
-				8B667C9C255E52E900D433FF /* RNMainVC.swift */,
+				8B667C9C255E52E900D433FF /* MainVC.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		8B3C1ED7255E6DF500184D1A /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				8B3C1ED9255E6E5C00184D1A /* NewsEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		8B3C1ED8255E6E1A00184D1A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				8B667CA7255E61E300D433FF /* Router.swift */,
+				8B3C1EC8255E699000184D1A /* HTTPMethod.swift */,
+				8B3C1ECE255E69B900184D1A /* HTTPTask.swift */,
+				8B3C1ECB255E69AB00184D1A /* EndPointType.swift */,
+				8B3C1ED1255E69CF00184D1A /* NetworkLogger.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		8B667C8F255E4B8700D433FF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				8B667CA7255E61E300D433FF /* Router.swift */,
+				8BDEE63E255E710600F9D5CB /* Manager */,
+				8B3C1ED8255E6E1A00184D1A /* Networking */,
+				8B3C1ED7255E6DF500184D1A /* Endpoints */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -147,9 +185,18 @@
 		8B667C9F255E535000D433FF /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				8B667CA4255E53C300D433FF /* RNBaseConfigurator.swift */,
+				8B3C1EBA255E66F400184D1A /* BaseVC.swift */,
+				8B3C1EBE255E671400184D1A /* BaseConfigurator.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		8BDEE63E255E710600F9D5CB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8B3C1ED4255E6CA200184D1A /* NetworkManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		D1BB6CC85B28D0C17FA4CA3F /* Frameworks */ = {
@@ -220,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B0517AD255E468A00D5F491 /* LaunchScreen.storyboard in Resources */,
+				8B3C1EC2255E681100184D1A /* Environments.plist in Resources */,
 				8B0517AA255E468A00D5F491 /* Assets.xcassets in Resources */,
 				8B0517A8255E468800D5F491 /* Main.storyboard in Resources */,
 			);
@@ -274,13 +322,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B3C1ED2255E69CF00184D1A /* NetworkLogger.swift in Sources */,
 				8B667C99255E524700D433FF /* RNNews.swift in Sources */,
 				8B0517A1255E468800D5F491 /* AppDelegate.swift in Sources */,
+				8B3C1ED5255E6CA200184D1A /* NetworkManager.swift in Sources */,
 				8B667C92255E4EEC00D433FF /* RNUser.swift in Sources */,
+				8B3C1EBB255E66F400184D1A /* BaseVC.swift in Sources */,
 				8B667CA8255E61E300D433FF /* Router.swift in Sources */,
-				8B667CA5255E53C300D433FF /* RNBaseConfigurator.swift in Sources */,
+				8B3C1EC9255E699000184D1A /* HTTPMethod.swift in Sources */,
 				8B0517A3255E468800D5F491 /* SceneDelegate.swift in Sources */,
-				8B667C9D255E52E900D433FF /* RNMainVC.swift in Sources */,
+				8B3C1ECF255E69B900184D1A /* HTTPTask.swift in Sources */,
+				8B667C9D255E52E900D433FF /* MainVC.swift in Sources */,
+				8B3C1EDA255E6E5C00184D1A /* NewsEndpoint.swift in Sources */,
+				8B3C1ECC255E69AB00184D1A /* EndPointType.swift in Sources */,
+				8B3C1EBF255E671400184D1A /* BaseConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
