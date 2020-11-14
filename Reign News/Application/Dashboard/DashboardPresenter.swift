@@ -7,8 +7,9 @@
 
 import Foundation
 
+
 protocol NewsViewCellDelegate {
-    func show(title: String)
+    func show(title: String, authorNews: String, created: String)
 }
 
 protocol DashboardViewDelegate: class {
@@ -36,7 +37,7 @@ class DashboardPresenter {
     
     func viewDidLoad() {
         getNews()
-        view?.setTitleNavigation(title: "News")
+        view?.setTitleNavigation(title: "Reign News")
     }
     
     func getNews() {
@@ -58,7 +59,8 @@ class DashboardPresenter {
     
     func configureCell(cell: NewsViewCellDelegate, row: Int) {
         let aNews = news[row]
-        cell.show(title: aNews.storyTitle ?? "title Unknown")
+        let createdFormated = MainHelper.getDateFrom(aNews.createdAt ?? "") ?? "--/--/--"
+        cell.show(title: aNews.storyTitle!, authorNews: aNews.author!, created: createdFormated)
     }
 
     

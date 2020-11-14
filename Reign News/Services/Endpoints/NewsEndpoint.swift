@@ -75,7 +75,7 @@ extension NewsAPI: EndPointType {
         case .favorite(params: let paramsFavorite):
             request = try URLEncodedFormParameterEncoder().encode(paramsFavorite,
                                                                   into: request)
-        case .search(byDate: let searchParams, page: let page):
+        case .search(byDate: let searchParams, page: _):
             let params = [
                 "query": searchParams,
 //                "page" : "\(page)"

@@ -15,6 +15,8 @@ class DashboardVC: UIViewController {
     //TableView
     @IBOutlet weak var tableViewNews: UITableView!
     
+    //properties
+    let cellHeight: CGFloat = 125
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +48,11 @@ extension DashboardVC: DashboardViewDelegate {
 extension DashboardVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 } // UITableViewDelegate

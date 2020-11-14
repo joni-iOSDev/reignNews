@@ -11,10 +11,13 @@ class RNNews {
     
     let createdAt: String?
     let storyTitle: String?
+    let author: String?
     
     init(json: [String:Any]) {
         self.createdAt = json["created_at"] as? String ?? "Created Unknown"
         self.storyTitle = json["story_title"] as? String ?? "Title Unknown"
+        self.author = json["author"] as? String ?? "Author Unknown"
+
     }
     
     static func getArray(json: [String:Any]) -> [RNNews] {

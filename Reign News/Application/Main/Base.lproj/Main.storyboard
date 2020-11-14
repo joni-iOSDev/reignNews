@@ -55,20 +55,46 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tki-Um-tRN">
-                                                    <rect key="frame" x="20" y="10" width="374" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tki-Um-tRN">
+                                                    <rect key="frame" x="20" y="10" width="374" height="99"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                    <color key="textColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-w3-hTS">
+                                                    <rect key="frame" x="20" y="119" width="234" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="9vV-5O-Iqt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/0000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kH-Vw-Bdj">
+                                                    <rect key="frame" x="274" y="119" width="120" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="nZX-c4-G4v"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="5kH-Vw-Bdj" secondAttribute="trailing" constant="20" id="Guc-Ql-c8S"/>
                                                 <constraint firstItem="tki-Um-tRN" firstAttribute="top" secondItem="zhf-Hv-9jG" secondAttribute="top" constant="10" id="L2u-h9-MtW"/>
                                                 <constraint firstAttribute="trailing" secondItem="tki-Um-tRN" secondAttribute="trailing" constant="20" id="OPc-ME-iEP"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZYw-w3-hTS" secondAttribute="bottom" constant="10" id="a8a-Hj-nKa"/>
                                                 <constraint firstItem="tki-Um-tRN" firstAttribute="leading" secondItem="zhf-Hv-9jG" secondAttribute="leading" constant="20" id="gFF-vb-RUR"/>
+                                                <constraint firstItem="5kH-Vw-Bdj" firstAttribute="leading" secondItem="ZYw-w3-hTS" secondAttribute="trailing" constant="20" id="luT-fG-HkV"/>
+                                                <constraint firstItem="ZYw-w3-hTS" firstAttribute="leading" secondItem="zhf-Hv-9jG" secondAttribute="leading" constant="20" id="mr5-Kj-uZ1"/>
+                                                <constraint firstAttribute="bottom" secondItem="5kH-Vw-Bdj" secondAttribute="bottom" constant="10" id="tVf-3u-UNO"/>
+                                                <constraint firstItem="ZYw-w3-hTS" firstAttribute="top" secondItem="tki-Um-tRN" secondAttribute="bottom" constant="10" id="vDk-R2-xQy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="author" destination="ZYw-w3-hTS" id="rn7-ED-AuB"/>
+                                            <outlet property="createdDate" destination="5kH-Vw-Bdj" id="526-4l-eOQ"/>
                                             <outlet property="newsTitle" destination="tki-Um-tRN" id="M6T-gV-cra"/>
                                         </connections>
                                     </tableViewCell>
