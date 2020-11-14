@@ -24,11 +24,10 @@ protocol NetworkRouter: AnyObject {
                  finishRequest: @escaping FinishRequest,
                  errorResponse: @escaping ErrorResponse,
                  fatal: @escaping FatalResponse,
-                 response: Response)
+                 onResponse: @escaping Response)
     func cancel()
     
 }
-
 /**
  - **Router**
  */
@@ -39,16 +38,12 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
                  finishRequest: @escaping FinishRequest,
                  errorResponse: @escaping ErrorResponse,
                  fatal: @escaping FatalResponse,
-                 response: (Int, [String : Any]) -> Void) {
-        
-        let request = route as! URLRequestConvertible
-        print("PATH: => \(String(describing: request.urlRequest?.url))")
-
-        AF.request(request).responseJSON(completionHandler: { (response) in
+                 onResponse: @escaping Response) {
+        AF.request(route as! URLRequestConvertible).responseJSON { (response) in
             if let res = response.value as? [String:Any] {
-                print(res)
+                onResponse(response.response!.statusCode, res)
             }
-        })
+        }
     }
     
     

@@ -15,7 +15,7 @@ enum NetworkEnvironment {
 }
 
 public enum NewsAPI: URLRequestConvertible {
-    case search(byDate: String)
+    case search(byDate: String, page: Int)
     case favorite(params:[String:String])
 }
 
@@ -75,9 +75,10 @@ extension NewsAPI: EndPointType {
         case .favorite(params: let paramsFavorite):
             request = try URLEncodedFormParameterEncoder().encode(paramsFavorite,
                                                                   into: request)
-        case .search(byDate: let searchParams):
+        case .search(byDate: let searchParams, let page):
             let params = [
-                "search": searchParams
+                "query": searchParams,
+                "page" : "\(page)"
             ]
             request = try URLEncodedFormParameterEncoder().encode(params,
                                                                   into: request)

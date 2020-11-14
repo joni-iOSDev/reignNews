@@ -10,7 +10,7 @@ import Foundation
 struct NetworkManager {
     
     static let environment: NetworkEnvironment = .prod
-    let router =  Router<NewsAPI>()
+    fileprivate let router =  Router<NewsAPI>()
     
     func search(page: Int,
                 by data: String,
@@ -18,14 +18,17 @@ struct NetworkManager {
                 finishRequest: @escaping FinishRequest,
                 errorResponse: @escaping ErrorResponse,
                 fatal: @escaping FatalResponse,
-                response: (Int, [String : Any]) -> Void) {
+                onResponse: @escaping (Int, [RNNews]) -> Void) {
         
-        router.request(.search(byDate: data),
+        router.request(.search(byDate: data, page: page),
                        initRequest: initRequest,
                        finishRequest: finishRequest,
                        errorResponse: errorResponse,
-                       fatal: fatal,
-                       response: response)
+                       fatal: fatal) { (statusCode, resopnseJSON) in
+            onResponse(statusCode, RNNews.getArray(json: resopnseJSON))
+
+        }
+        
     }
     
 }

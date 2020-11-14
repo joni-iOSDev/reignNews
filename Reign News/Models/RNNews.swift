@@ -15,7 +15,23 @@ class RNNews {
     init(json: [String:Any]) {
         self.createdAt = json["created_at"] as? String ?? ""
         self.title = json["title"] as? String ?? ""
-        
     }
+    
+    static func getArray(json: [String:Any]) -> [RNNews] {
+        
+        var array = [RNNews]()
+        
+        guard let newsJSON = json["hits"] as? [[String:Any]] else {
+            print("RN123 request array parse error")
+            return array
+        }
+        
+        for aNewsJSON in newsJSON {
+            let news = RNNews(json: aNewsJSON)
+            array.append(news)
+        }
+        return array
+    }
+    
     
 }

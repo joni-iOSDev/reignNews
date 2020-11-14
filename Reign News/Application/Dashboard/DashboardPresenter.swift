@@ -24,17 +24,18 @@ class DashboardPresenter {
     
     
     func viewDidLoad() {
-        services.router.request(.search(byDate: "iOS")) {
+        services.search(page: 0, by: "iOS") {
             //
         } finishRequest: {
             //
-        } errorResponse: { (errorMessage) in
+        } errorResponse: { (RNError) in
             //
         } fatal: {
-            
-        } response: { (statusCode, response) in
             //
+        } onResponse: { (responseCode, arrayNews) in
+            print(arrayNews)
         }
+
     }
     
     func viewDidAppear() {
