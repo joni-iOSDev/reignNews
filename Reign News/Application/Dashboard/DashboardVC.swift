@@ -14,6 +14,7 @@ class DashboardVC: UIViewController {
     
     //TableView
     @IBOutlet weak var tableViewNews: UITableView!
+    private let refreshControl = UIRefreshControl()
     
     //properties
     let cellHeight: CGFloat = 125
@@ -30,6 +31,21 @@ class DashboardVC: UIViewController {
 }
 
 extension DashboardVC: DashboardViewDelegate {
+    
+    @objc func refreshNews() {
+        presenter.getNews()
+    }
+    
+    func finishRefreshControl() {
+        refreshControl.endRefreshing()
+    }
+    
+    
+    func setupRefreshControl() {
+        tableViewNews.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(refreshNews), for: .valueChanged)
+    }
+    
     func setTitleNavigation(title: String) {
         navigationItem.title = title
     }
@@ -39,9 +55,6 @@ extension DashboardVC: DashboardViewDelegate {
         tableViewNews.reloadData()
     }
     
-    func isUserSigned() {
-        //
-    }
 }// DashboardViewDelegate
 
 
@@ -69,7 +82,6 @@ extension DashboardVC: UITableViewDataSource {
                                                      for: indexPath) as! NewsTableViewCell
         
         presenter.configureCell(cell: newsCell, row: indexPath.row)
-        
         return newsCell
     }
     

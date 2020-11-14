@@ -13,9 +13,11 @@ protocol NewsViewCellDelegate {
 }
 
 protocol DashboardViewDelegate: class {
-    func isUserSigned()
     func refreshData()
     func setTitleNavigation(title: String)
+    func setupRefreshControl()
+    func refreshNews()
+    func finishRefreshControl()
 }
 
 //DashboardPresenterImplmentation
@@ -38,13 +40,16 @@ class DashboardPresenter {
     func viewDidLoad() {
         getNews()
         view?.setTitleNavigation(title: "Reign News")
+        view?.setupRefreshControl()
     }
     
     func getNews() {
         services.search(page: 0, by: "iOS") {
             //
-        } finishRequest: {
-            //
+        } finishRequest: { [weak self] in
+            guard let self = self else { return }
+            self.view?.finishRefreshControl()
+            
         } errorResponse: { (RNError) in
             //
         } fatal: {
@@ -53,7 +58,6 @@ class DashboardPresenter {
             guard let self = self else { return }
             self.news = arrayNews
             self.view?.refreshData()
-
         }
     }
     

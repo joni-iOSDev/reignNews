@@ -59,8 +59,6 @@ extension NewsAPI: EndPointType {
     
     var headers: HTTPHeaders? {
         switch self {
-        case .favorite:
-            return nil
         default:
             return nil
         }
@@ -75,10 +73,10 @@ extension NewsAPI: EndPointType {
         case .favorite(params: let paramsFavorite):
             request = try URLEncodedFormParameterEncoder().encode(paramsFavorite,
                                                                   into: request)
-        case .search(byDate: let searchParams, page: _):
+        case .search(byDate: let searchParams, page: let page):
             let params = [
                 "query": searchParams,
-//                "page" : "\(page)"
+                "page" : "\(page)"
             ]
             request = try URLEncodedFormParameterEncoder().encode(params,
                                                                   into: request)
