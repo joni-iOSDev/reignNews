@@ -30,6 +30,8 @@ class DashboardPresenter {
             //
         } errorResponse: { (errorMessage) in
             //
+        } fatal: {
+            
         } response: { (statusCode, response) in
             //
         }

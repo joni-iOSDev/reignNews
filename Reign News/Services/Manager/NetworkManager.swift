@@ -17,12 +17,14 @@ struct NetworkManager {
                 initRequest: @escaping InitRequest,
                 finishRequest: @escaping FinishRequest,
                 errorResponse: @escaping ErrorResponse,
+                fatal: @escaping FatalResponse,
                 response: (Int, [String : Any]) -> Void) {
         
         router.request(.search(byDate: data),
                        initRequest: initRequest,
                        finishRequest: finishRequest,
                        errorResponse: errorResponse,
+                       fatal: fatal,
                        response: response)
     }
     
