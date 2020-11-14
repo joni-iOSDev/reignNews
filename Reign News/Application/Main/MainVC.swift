@@ -6,7 +6,27 @@
 //
 
 import Foundation
+import UIKit
 
-class RNMainVC: BaseVC {
+class MainVC: UIViewController {
     
+    var presenter: MainPresenter!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter = MainPresenter(viewDelegate: self)
+        presenter.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        presenter.viewDidAppear()
+    }
+    
+}
+
+extension MainVC: MainViewDelegate {
+    func isUserSigned() {
+        //
+    }
 }

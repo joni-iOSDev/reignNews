@@ -7,6 +7,15 @@
 
 import Foundation
 
-class RNNews: Codable {
+class RNNews {
+    
+    let createdAt: String?
+    let title: String?
+    
+    init(json: [String:Any]) {
+        self.createdAt = json["created_at"] as? String ?? ""
+        self.title = json["title"] as? String ?? ""
+        
+    }
     
 }

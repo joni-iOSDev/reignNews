@@ -8,8 +8,6 @@
 import Foundation
 import Alamofire
 
-public typealias HTTPHeaders = [String:String]
-
 public enum HTTPTask {
     case request
     case requestParameters(bodyParameters: [String:String]?)
