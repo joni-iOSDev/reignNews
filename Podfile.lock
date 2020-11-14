@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.2.2)
+  - SwiftDate (5.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - SwiftDate (~> 5.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - SwiftDate
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
 
-PODFILE CHECKSUM: ff20602f71fa3cbd05de1e0bf11daed93a51533e
+PODFILE CHECKSUM: c2a104f3d963590bcde0c503132e5dd21a0e25ae
 
 COCOAPODS: 1.9.3

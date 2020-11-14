@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 
 protocol NewsViewCellDelegate {
@@ -27,6 +28,7 @@ class DashboardPresenter {
     private let services = NetworkManager()
     
     var news = [RNNews]()
+    
     
     var numberOfNews: Int {
         return news.count
@@ -56,9 +58,16 @@ class DashboardPresenter {
             //
         } onResponse: { [weak self ](responseCode, arrayNews) in
             guard let self = self else { return }
-            self.news = arrayNews
+            self.sortdNews(array: arrayNews)
             self.view?.refreshData()
         }
+    }
+    
+    func sortdNews(array: [RNNews]) {
+        let ordered = array.sorted { (news1, news2) -> Bool in
+            return (news1.createdAt?.toDate())! > (news2.createdAt?.toDate())!
+        }
+        news = ordered
     }
     
     func configureCell(cell: NewsViewCellDelegate, row: Int) {

@@ -12,11 +12,13 @@ class RNNews {
     let createdAt: String?
     let storyTitle: String?
     let author: String?
+    let storyID: Int?
     
     init(json: [String:Any]) {
         self.createdAt = json["created_at"] as? String ?? "Created Unknown"
         self.storyTitle = json["story_title"] as? String ?? "Title Unknown"
         self.author = json["author"] as? String ?? "Author Unknown"
+        self.storyID = json["story_id"] as? Int ?? -1
 
     }
     
