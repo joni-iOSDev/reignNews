@@ -13,10 +13,13 @@ class DashboardVC: UIViewController {
     var presenter: DashboardPresenter!
     
     //TableView
+    @IBOutlet weak var tableViewNews: UITableView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewNews.delegate = self
+        tableViewNews.dataSource = self
         presenter = DashboardPresenter(viewDelegate: self)
         presenter.viewDidLoad()
     }
@@ -25,9 +28,44 @@ class DashboardVC: UIViewController {
 }
 
 extension DashboardVC: DashboardViewDelegate {
-    func isUserSigned() {
-        //
+    func setTitleNavigation(title: String) {
+        navigationItem.title = title
     }
     
     
-}
+    func refreshData() {
+        tableViewNews.reloadData()
+    }
+    
+    func isUserSigned() {
+        //
+    }
+}// DashboardViewDelegate
+
+
+extension DashboardVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
+    
+} // UITableViewDelegate
+
+extension DashboardVC: UITableViewDataSource {
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.numberOfNews
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let newsCell = tableView.dequeueReusableCell(withIdentifier: "NewsCellIdentifier",
+                                                     for: indexPath) as! NewsTableViewCell
+        
+        presenter.configureCell(cell: newsCell, row: indexPath.row)
+        
+        return newsCell
+    }
+    
+    
+} // UITableViewDataSource

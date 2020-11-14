@@ -7,8 +7,14 @@
 
 import Foundation
 
+protocol NewsViewCellDelegate {
+    func show(title: String)
+}
+
 protocol DashboardViewDelegate: class {
     func isUserSigned()
+    func refreshData()
+    func setTitleNavigation(title: String)
 }
 
 //DashboardPresenterImplmentation
@@ -17,6 +23,11 @@ class DashboardPresenter {
     fileprivate weak var view: DashboardViewDelegate?
     private let services = NetworkManager()
     
+    var news = [RNNews]()
+    
+    var numberOfNews: Int {
+        return news.count
+    }
     
     init(viewDelegate: DashboardViewDelegate) {
         self.view = viewDelegate
@@ -24,6 +35,11 @@ class DashboardPresenter {
     
     
     func viewDidLoad() {
+        getNews()
+        view?.setTitleNavigation(title: "News")
+    }
+    
+    func getNews() {
         services.search(page: 0, by: "iOS") {
             //
         } finishRequest: {
@@ -32,15 +48,18 @@ class DashboardPresenter {
             //
         } fatal: {
             //
-        } onResponse: { (responseCode, arrayNews) in
-            print(arrayNews)
-        }
+        } onResponse: { [weak self ](responseCode, arrayNews) in
+            guard let self = self else { return }
+            self.news = arrayNews
+            self.view?.refreshData()
 
+        }
     }
     
-    func viewDidAppear() {
-        //
+    func configureCell(cell: NewsViewCellDelegate, row: Int) {
+        let aNews = news[row]
+        cell.show(title: aNews.storyTitle ?? "title Unknown")
     }
-    
+
     
 }

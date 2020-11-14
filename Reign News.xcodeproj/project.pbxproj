@@ -24,6 +24,7 @@
 		8B7EE301255F3D5A00D729A3 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7EE300255F3D5A00D729A3 /* MainPresenter.swift */; };
 		8BA977E8255F8B4900EDEAA6 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA977E7255F8B4900EDEAA6 /* DashboardVC.swift */; };
 		8BA977EF255F8B8000EDEAA6 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA977EE255F8B8000EDEAA6 /* DashboardPresenter.swift */; };
+		8BA97800255FBAD700EDEAA6 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA977FF255FBAD700EDEAA6 /* NewsTableViewCell.swift */; };
 		B2FB654E817CC3EF38222C9C /* Pods_Reign_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF2293BC037F77E270AF19F2 /* Pods_Reign_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,7 @@
 		8B7EE300255F3D5A00D729A3 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		8BA977E7255F8B4900EDEAA6 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		8BA977EE255F8B8000EDEAA6 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
+		8BA977FF255FBAD700EDEAA6 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		AF2293BC037F77E270AF19F2 /* Pods_Reign_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reign_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C88B77A9DC4D1AF32F7FE5B8 /* Pods-Reign News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reign News.release.xcconfig"; path = "Target Support Files/Pods-Reign News/Pods-Reign News.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +186,7 @@
 			children = (
 				8BA977E7255F8B4900EDEAA6 /* DashboardVC.swift */,
 				8BA977EE255F8B8000EDEAA6 /* DashboardPresenter.swift */,
+				8BA977FF255FBAD700EDEAA6 /* NewsTableViewCell.swift */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				8B3C1ED5255E6CA200184D1A /* NetworkManager.swift in Sources */,
 				8B667C92255E4EEC00D433FF /* RNUser.swift in Sources */,
 				8B667CA8255E61E300D433FF /* Router.swift in Sources */,
+				8BA97800255FBAD700EDEAA6 /* NewsTableViewCell.swift in Sources */,
 				8B0517A3255E468800D5F491 /* SceneDelegate.swift in Sources */,
 				8B7EE301255F3D5A00D729A3 /* MainPresenter.swift in Sources */,
 				8B667C9D255E52E900D433FF /* MainVC.swift in Sources */,

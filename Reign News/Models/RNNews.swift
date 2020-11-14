@@ -10,11 +10,11 @@ import Foundation
 class RNNews {
     
     let createdAt: String?
-    let title: String?
+    let storyTitle: String?
     
     init(json: [String:Any]) {
-        self.createdAt = json["created_at"] as? String ?? ""
-        self.title = json["title"] as? String ?? ""
+        self.createdAt = json["created_at"] as? String ?? "Created Unknown"
+        self.storyTitle = json["story_title"] as? String ?? "Title Unknown"
     }
     
     static func getArray(json: [String:Any]) -> [RNNews] {
