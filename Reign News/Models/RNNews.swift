@@ -13,12 +13,21 @@ class RNNews {
     let storyTitle: String?
     let author: String?
     let storyID: Int?
+    var delete: Bool?
+    
+    init(createdAt: String?, storyTitle: String?,author: String?, storyID: Int?, delete: Bool) {
+        self.createdAt = createdAt
+        self.storyID = storyID
+        self.author = author
+        self.storyTitle = storyTitle
+        self.delete = delete
+    }
     
     init(json: [String:Any]) {
-        self.createdAt = json["created_at"] as? String ?? "Created Unknown"
-        self.storyTitle = json["story_title"] as? String ?? "Title Unknown"
-        self.author = json["author"] as? String ?? "Author Unknown"
-        self.storyID = json["story_id"] as? Int ?? -1
+        createdAt = json["created_at"] as? String ?? "Created Unknown"
+        storyTitle = json["story_title"] as? String ?? "Title Unknown"
+        author = json["author"] as? String ?? "Author Unknown"
+        storyID = json["story_id"] as? Int ?? -1
 
     }
     

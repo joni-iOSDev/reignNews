@@ -26,7 +26,7 @@ class DashboardPresenter {
     
     fileprivate weak var view: DashboardViewDelegate?
     private let services = NetworkManager()
-    
+    private let manager = CoreDataManager()
     var news = [RNNews]()
     
     
@@ -45,35 +45,55 @@ class DashboardPresenter {
         view?.setupRefreshControl()
     }
     
-    func getNews() {
-        services.search(page: 0, by: "iOS") {
+    func getNews(by data: String = "iOS", page: Int = 0) {
+        services.search(page: page, by: data) {
             //
-        } finishRequest: { [weak self] in
-            guard let self = self else { return }
-            self.view?.finishRefreshControl()
+        } finishRequest: {
+            //
             
-        } errorResponse: { (RNError) in
-            //
+        } errorResponse: {[weak self] (RNError) in
+            //TODO: error manager
+            //if error is conexion fail to internet
+            guard let self = self else { return }
+            self.fetchNewsPersistent()
         } fatal: {
             //
         } onResponse: { [weak self ](responseCode, arrayNews) in
             guard let self = self else { return }
             self.sortdNews(array: arrayNews)
-            self.view?.refreshData()
         }
+    }
+    
+    private func fetchNewsPersistent() {
+        news = manager.fetchNews()
+        self.view?.refreshData()
+        self.view?.finishRefreshControl()
     }
     
     func sortdNews(array: [RNNews]) {
         let ordered = array.sorted { (news1, news2) -> Bool in
             return (news1.createdAt?.toDate())! > (news2.createdAt?.toDate())!
         }
-        news = ordered
+        manager.persistentNews(data: ordered) { [ weak self ] in
+            guard let self = self else { return }
+            self.fetchNewsPersistent()
+        }
     }
     
     func configureCell(cell: NewsViewCellDelegate, row: Int) {
         let aNews = news[row]
-        let createdFormated = MainHelper.getDateFrom(aNews.createdAt ?? "") ?? "--/--/--"
-        cell.show(title: aNews.storyTitle!, authorNews: aNews.author!, created: createdFormated)
+        let createdFormated = MainHelper.getDateFrom(aNews.createdAt ?? "") ?? "Date Unknown"
+        cell.show(title: aNews.storyTitle ?? "Title Unknown",
+                  authorNews: aNews.author ?? "Author Unknown", created: createdFormated)
+    }
+
+    func deleteNewsItem(at: Int) {
+        if let id = news[at].storyID {
+            news[at].delete = true
+            manager.deleteLogicNewsItem(id:id)
+            news.remove(at: at)
+        }
+
     }
 
     

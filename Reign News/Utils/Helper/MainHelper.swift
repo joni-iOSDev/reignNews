@@ -15,7 +15,7 @@ class MainHelper {
         dateFormaterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "MMM dd, yyyy"
+        dateFormatterPrint.dateFormat = "MM-dd-yyyy HH:mm"
         guard let date = dateFormaterGet.date(from: stringDate) else {
             return nil
         }

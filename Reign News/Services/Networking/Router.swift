@@ -43,13 +43,17 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
         if let url = (route as! URLRequestConvertible).urlRequest {
             print("URL enpoint => \(url)")
         }
-        
-        AF.request(route as! URLRequestConvertible).responseJSON { (response) in
-            if let res = response.value as? [String:Any] {
-                print("respone => \(res)")
-                onResponse(response.response!.statusCode, res)
+        AF.request(route as! URLRequestConvertible)
+            .responseJSON { (response) in
+                
+                if let error = response.error {
+                    errorResponse(error)
+                }
+                if let res = response.value as? [String:Any] {
+                    print("respone => \(res)")
+                    onResponse(response.response!.statusCode, res)
+                }
             }
-        }
         finishRequest()
     }
     

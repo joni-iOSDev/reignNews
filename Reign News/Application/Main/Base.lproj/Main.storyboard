@@ -70,12 +70,12 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/00/0000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kH-Vw-Bdj">
-                                                    <rect key="frame" x="274" y="119" width="120" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kH-Vw-Bdj">
+                                                    <rect key="frame" x="274" y="125.5" width="120" height="14.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="120" id="nZX-c4-G4v"/>
+                                                        <constraint firstAttribute="width" constant="120" id="9oo-o9-15I"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -114,11 +114,28 @@
                     <navigationItem key="navigationItem" id="B4M-jn-1Ru"/>
                     <connections>
                         <outlet property="tableViewNews" destination="Vpf-5C-C1F" id="WZK-WB-wRv"/>
+                        <segue destination="jlf-hg-LVA" kind="show" identifier="goToMain" id="55U-gL-fbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67Q-TL-x6Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1515.9420289855075" y="105.80357142857143"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aIm-47-fca">
+            <objects>
+                <viewController id="jlf-hg-LVA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aFh-Wk-QCs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eTa-jz-aev"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JCH-Rg-tgO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96h-9Q-9Bp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2409" y="106"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZhK-4w-IkO">
