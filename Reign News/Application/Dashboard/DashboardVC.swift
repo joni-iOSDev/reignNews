@@ -31,6 +31,14 @@ class DashboardVC: UIViewController {
 }
 
 extension DashboardVC: DashboardViewDelegate {
+    func goToWebView(with url: String) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let webView = sb.instantiateViewController(withIdentifier: "webView") as? WebViewVC
+        webView?.url = url
+        let navController = UINavigationController(rootViewController: webView!)
+        present(navController, animated: true, completion: nil)
+    }
+    
     
     @objc func refreshNews() {
         presenter.getNews()
@@ -68,6 +76,7 @@ extension DashboardVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter.selectedCell(at: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

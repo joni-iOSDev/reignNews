@@ -19,6 +19,7 @@ protocol DashboardViewDelegate: class {
     func setupRefreshControl()
     func refreshNews()
     func finishRefreshControl()
+    func goToWebView(with url: String)
 }
 
 //DashboardPresenterImplmentation
@@ -94,6 +95,11 @@ class DashboardPresenter {
             news.remove(at: at)
         }
 
+    }
+    
+    func selectedCell(at: Int) {
+        let url = news[at].storyURL ?? ""
+        view?.goToWebView(with: url)
     }
 
     

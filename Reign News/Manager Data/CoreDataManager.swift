@@ -37,6 +37,7 @@ class CoreDataManager {
                     dataNews.createdAt = aNews.createdAt
                     dataNews.storyID = Int32(id)
                     dataNews.storyTitle = aNews.storyTitle
+                    dataNews.storyURL = aNews.storyURL
                 }
             }
             do {
@@ -95,7 +96,8 @@ class CoreDataManager {
                                         storyTitle: i.storyTitle,
                                         author: i.author,
                                         storyID: Int(i.storyID),
-                                        delete: i.delete))
+                                        delete: i.delete,
+                                        url: i.storyURL ?? ""))
             }
             print("RN12 News count \(arrayNews.count)")
             let myNews = arrayNews.filter { (news) -> Bool in

@@ -121,17 +121,36 @@
             </objects>
             <point key="canvasLocation" x="1515.9420289855075" y="105.80357142857143"/>
         </scene>
-        <!--View Controller-->
+        <!--Web ViewVC-->
         <scene sceneID="aIm-47-fca">
             <objects>
-                <viewController id="jlf-hg-LVA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webView" id="jlf-hg-LVA" customClass="WebViewVC" customModule="Reign_News" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aFh-Wk-QCs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLv-sZ-fOa">
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="eTa-jz-aev"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eTa-jz-aev" firstAttribute="bottom" secondItem="dLv-sZ-fOa" secondAttribute="bottom" id="cpB-bZ-vUD"/>
+                            <constraint firstItem="dLv-sZ-fOa" firstAttribute="leading" secondItem="eTa-jz-aev" secondAttribute="leading" id="cze-sI-5P8"/>
+                            <constraint firstItem="eTa-jz-aev" firstAttribute="trailing" secondItem="dLv-sZ-fOa" secondAttribute="trailing" id="gyy-d2-dyg"/>
+                            <constraint firstItem="dLv-sZ-fOa" firstAttribute="top" secondItem="eTa-jz-aev" secondAttribute="top" id="mLs-RQ-cEk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JCH-Rg-tgO"/>
+                    <connections>
+                        <outlet property="mWkWebView" destination="dLv-sZ-fOa" id="p8Y-Zw-VRp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96h-9Q-9Bp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

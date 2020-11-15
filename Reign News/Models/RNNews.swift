@@ -14,13 +14,15 @@ class RNNews {
     let author: String?
     let storyID: Int?
     var delete: Bool?
+    var storyURL: String?
     
-    init(createdAt: String?, storyTitle: String?,author: String?, storyID: Int?, delete: Bool) {
+    init(createdAt: String?, storyTitle: String?,author: String?, storyID: Int?, delete: Bool, url: String) {
         self.createdAt = createdAt
         self.storyID = storyID
         self.author = author
         self.storyTitle = storyTitle
         self.delete = delete
+        self.storyURL = url
     }
     
     init(json: [String:Any]) {
@@ -28,7 +30,7 @@ class RNNews {
         storyTitle = json["story_title"] as? String ?? "Title Unknown"
         author = json["author"] as? String ?? "Author Unknown"
         storyID = json["story_id"] as? Int ?? -1
-
+        storyURL = json["story_url"] as? String ?? ""
     }
     
     static func getArray(json: [String:Any]) -> [RNNews] {

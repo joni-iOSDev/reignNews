@@ -25,6 +25,7 @@
 		8B87F4D925609FEB00446A5A /* newsDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B87F4D725609FEB00446A5A /* newsDB.xcdatamodeld */; };
 		8B87F4DD2560EC4600446A5A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87F4DC2560EC4600446A5A /* CoreDataManager.swift */; };
 		8B87F4E12560ECEF00446A5A /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B87F4E02560ECEF00446A5A /* UIViewControllerExtensions.swift */; };
+		8B8D180425612F260093AC3A /* WebViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8D180325612F260093AC3A /* WebViewVC.swift */; };
 		8BA977E8255F8B4900EDEAA6 /* DashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA977E7255F8B4900EDEAA6 /* DashboardVC.swift */; };
 		8BA977EF255F8B8000EDEAA6 /* DashboardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA977EE255F8B8000EDEAA6 /* DashboardPresenter.swift */; };
 		8BA97800255FBAD700EDEAA6 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA977FF255FBAD700EDEAA6 /* NewsTableViewCell.swift */; };
@@ -54,6 +55,7 @@
 		8B87F4D825609FEB00446A5A /* newsDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = newsDB.xcdatamodel; sourceTree = "<group>"; };
 		8B87F4DC2560EC4600446A5A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8B87F4E02560ECEF00446A5A /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		8B8D180325612F260093AC3A /* WebViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewVC.swift; sourceTree = "<group>"; };
 		8BA977E7255F8B4900EDEAA6 /* DashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVC.swift; sourceTree = "<group>"; };
 		8BA977EE255F8B8000EDEAA6 /* DashboardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardPresenter.swift; sourceTree = "<group>"; };
 		8BA977FF255FBAD700EDEAA6 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				8B0517BB255E4B1500D5F491 /* Main */,
 				8BA977E6255F8A8000EDEAA6 /* Dashboard */,
+				8B8D180225612EDD0093AC3A /* webView */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -206,6 +209,14 @@
 				8B87F4E02560ECEF00446A5A /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B8D180225612EDD0093AC3A /* webView */ = {
+			isa = PBXGroup;
+			children = (
+				8B8D180325612F260093AC3A /* WebViewVC.swift */,
+			);
+			path = webView;
 			sourceTree = "<group>";
 		};
 		8BA977E6255F8A8000EDEAA6 /* Dashboard */ = {
@@ -379,6 +390,7 @@
 				8B667CA8255E61E300D433FF /* Router.swift in Sources */,
 				8BA97800255FBAD700EDEAA6 /* NewsTableViewCell.swift in Sources */,
 				8B0517A3255E468800D5F491 /* SceneDelegate.swift in Sources */,
+				8B8D180425612F260093AC3A /* WebViewVC.swift in Sources */,
 				8B7EE301255F3D5A00D729A3 /* MainPresenter.swift in Sources */,
 				8B667C9D255E52E900D433FF /* MainVC.swift in Sources */,
 				8B3C1EDA255E6E5C00184D1A /* NewsEndpoint.swift in Sources */,
