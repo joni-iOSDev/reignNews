@@ -1,1 +1,1 @@
-# reignNews
+# Reign News
